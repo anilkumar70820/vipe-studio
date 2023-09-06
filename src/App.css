@@ -1,38 +1,572 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none !important;
+  list-style-type: none !important;
+  box-sizing: border-box !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'Gilroy';
+  src: url(./assets/fonts/gilroy-free/Gilroy-FREE/Gilroy-Light.otf);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@font-face {
+  font-family: 'konexy';
+  src: url(./assets/fonts/Konexy-Font/Konexy\ Font.otf);
+}
+
+/* ========Root Start========= */
+:root {
+  /* FONT-SIZE */
+  --fs-2xsm: 14px;
+  --fs-xsm: 16px;
+  --fs-sm: 18px;
+  --fs-md: 24px;
+  --fs-lg: 36px;
+  --fs-xl: 40px;
+  --fs-2xl: 48px;
+  --fs-3xl: 72px;
+  /* FONT COLORS */
+  --text-ffffff: #ffffff;
+  --text-6022EA: #6022EA;
+  --text-868687: #868687;
+  --text-000000: #000000;
+}
+
+.fs_2xsm {
+  font-size: var(--fs-2xsm);
+}
+
+.fs_xsm {
+  font-size: var(--fs-xsm);
+}
+
+.fs_sm {
+  font-size: var(--fs-sm);
+}
+
+.fs_md {
+  font-size: var(--fs-md);
+}
+
+.fs_lg {
+  font-size: var(--fs-lg);
+}
+
+.fs_xl {
+  font-size: var(--fs-xl);
+}
+
+.fs_2xl {
+  font-size: var(--fs-2xl);
+}
+
+.fs_3xl {
+  font-size: var(--fs-3xl);
+}
+
+.text_ffffff {
+  color: var(--text-ffffff);
+}
+
+.text_6022EA {
+  color: var(--text-6022EA);
+}
+
+.text_868687 {
+  color: var(--text-868687);
+}
+
+.text_000000 {
+  color: var(--text-000000);
+}
+
+/* ==========Root End Here========== */
+/* ===========Common Classes=========== */
+.cursor_pointer {
+  cursor: pointer;
+}
+
+.ff_gilroy {
+  font-family: 'Gilroy' !important;
+}
+
+.ff_konexy {
+  font-family: 'Konexy';
+}
+
+.ff_inter {
+  font-family: 'inter';
+}
+
+.fs_italic {
+  font-style: italic;
+}
+
+.buttons {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 80px;
+  background-color: #6022EA;
+  box-shadow: 0px 4px 20px 0px rgba(96, 34, 234, 0.20);
+  color: var(--text-ffffff);
+  font-family: 'Gilroy';
+  font-size: var(--fs-xsm);
+  font-weight: 600;
+  transition: all 500ms linear;
+}
+
+.buttons:hover {
+  color: var(--text-6022EA);
+  background-color: white;
+  box-shadow: 0px 5px 13px 5px #6022EA;
+}
+
+
+.nav_links {
+  font-family: 'Gilroy' !important;
+  font-size: var(--fs-xsm) !important;
+  font-weight: 400 !important;
+  color: var(--text-ffffff) !important;
+  position: relative !important;
+}
+
+.headings {
+  font-family: 'Konexy';
+  font-size: var(--fs-2xl);
+  font-weight: 400;
+}
+
+.common_texts {
+  font-family: 'Gilroy';
+  font-size: var(--fs-xsm);
+  font-weight: 400;
+}
+
+.footer_links {
+  font-family: 'Gilroy';
+  font-size: var(--fs-2xsm);
+  font-weight: 400;
+  color: var(--text-ffffff);
+}
+
+/* ========Preloader======= */
+.preloading_animation {
+  animation: scale 700ms infinite alternate-reverse;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1.1);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.preloading_animation1 {
+  animation: rotate 700ms infinite alternate;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+/* ========Preloader End====== */
+/* =========Back To Top======= */
+.back_top_btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #FA00FF;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: fixed;
+  right: 1.7%;
+  bottom: 40px;
+  z-index: 1;
+  transition: all 500ms linear;
 }
 
-.App-link {
-  color: #61dafb;
+.back_top_btn:hover {
+  background-color: #5F21E9;
+  box-shadow: 1px 1px 5px 5px #FA00FF;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.back_top_btn path {
+  transition: all 500ms linear;
+}
+
+.back_top_btn:hover path {
+  fill: #FFF;
+}
+
+/* ========Back To Top End======= */
+
+.ellipse {
+  /* width: 170px;
+  height: 170px;
+  background-color: #FA00FF; */
+  filter: blur(100px);
+  /* border-radius: 100%; */
+}
+
+/* =============Common Classes End=========== */
+/* ==========Hero Section=============== */
+.gray_box {
+  width: 537px;
+  height: 64px;
+  border-radius: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.10);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.Box_gray {
+  background-color: #0D0D0D;
+}
+
+.gray_box input {
+  padding-left: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 80px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #FFF;
+  font-family: 'Gilroy';
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  margin-top: 8px !important;
+  vertical-align: 0 !important;
+  content: url(./assets/images/svg/down_arrow.svg) !important;
+  border-top: 0 solid !important;
+  border-right: 0 solid transparent !important;
+  border-bottom: 0;
+  border-left: 0 solid transparent !important;
+}
+
+.drop_down {
+  border: none !important;
+  background: transparent !important;
+  color: white !important;
+}
+
+.ellipse3_abs {
+  position: absolute;
+  bottom: -18%;
+  left: 45%;
+}
+
+.ellipse4_abs {
+  position: absolute;
+  right: -4%;
+  top: -2%;
+}
+
+.h1_line {
+  position: relative;
+}
+
+.h1_line::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 85%;
+  left: -16px;
+  top: 50%;
+  transform: translatey(-50%);
+  background-color: #6022EA;
+
+}
+
+/* ==========Hero Section End============ */
+/* =========Integer section============= */
+.integer_cards {
+  width: 418.333px;
+  height: 426px;
+  padding: 60px 38px 38px 38px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: var(--white05, #FFF);
+  cursor: pointer;
+  transition: all 400ms linear;
+}
+
+.integer_cards:hover {
+  box-shadow: 0px 20px 60.57143px 0px #E5E9F6;
+  border: 1px solid transparent;
+}
+
+
+
+/* ===========Integer Section End here============== */
+
+/* ===============vipe studio services=========== */
+.not_sure_bg {
+  border: 1px solid black;
+  border-radius: 25.938px;
+  background-color: rgb(31, 30, 30);
+  padding: 27px 32px !important;
+}
+
+.ellipse1_abs {
+  position: absolute;
+  left: 12%;
+  top: 45%;
+}
+
+.ellipse2_abs {
+  position: absolute;
+  right: 12%;
+  bottom: 10%;
+}
+
+/* ===============vipe studio services end============= */
+
+/* ==============teams star================== */
+.team_star_bg {
+  background-color: #F6F6F6;
+}
+
+.team_star_abs {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.have_you_bg {
+  padding: 25px 52px 45px 43px;
+  border-radius: 17px;
+  background: linear-gradient(91deg, #5F21E9 60.06%, #FA00FF 103.73%);
+  box-shadow: 0px 20px 50px 0px rgba(39, 0, 124, 0.50);
+}
+
+.have_you_abs {
+  position: absolute;
+  bottom: -8%;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+.check_it_btn {
+  padding: 14.326px 38.202px;
+  border-radius: 137.287px;
+  background-color: #FFFFFF;
+  transition: all 500ms linear;
+}
+
+.check_it_btn:hover {
+  background-color: #6022EA;
+  color: #FFFFFF;
+  box-shadow: 0px 5px 13px 5px #ffffff;
+}
+
+
+
+/* ================team stars end============== */
+
+/* ==========Succes Guides================ */
+.category_btn {
+  padding: 8px 16px;
+  font-family: 'Gilroy';
+  color: var(--text-6022EA);
+  font-weight: 600;
+  font-size: var(--fs-xsm);
+  border-radius: 80px;
+  border: 1px solid #6022EA;
+  background-color: #FFFFFF;
+  transition: all 500ms linear;
+}
+
+.category_btn:hover {
+  color: var(--text-ffffff);
+  background-color: #6022EA;
+  border: 1px solid transparent;
+}
+
+.category_box {
+  padding: 15px 14px 14px 17px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  background-color: #FFF;
+  cursor: pointer;
+}
+
+.category_box:hover {
+  box-shadow: 0px 5px 13px 5px #6022EA;
+}
+
+div ::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/* ===========Succes Guides  End============ */
+/* ===========Footer=========== */
+.search_box {
+  width: 381px;
+  height: 43px;
+  background-color: #FFFFFF;
+  border-radius: 80px;
+}
+
+.search_box input {
+  padding: 0px 0px 0px 21px;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 80px;
+  opacity: 0.7;
+  font-weight: 400;
+  color: #313131;
+  font-family: 'Gilroy';
+  font-size: 16px;
+}
+
+.footer_line {
+  width: 1px;
+  height: 14px;
+  background-color: #FFFFFF;
+}
+
+.social_icons {
+  transition: all 500ms linear;
+}
+
+.social_icons:hover {
+  transform: translateY(-7px);
+}
+
+/* ============Footer End============= */
+/* ==========Media Quries============ */
+@media (max-width:1400px) {
+  :root {
+    /* FONT-SIZE */
+    --fs-2xl: 40px;
+    --fs-3xl: 48px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .ellipse1_abs {
+    position: absolute;
+    left: 3%;
+    top: 45%;
+  }
+
+  .ellipse2_abs {
+    position: absolute;
+    right: 4%;
+    bottom: 10%;
   }
 }
+
+@media (max-width:1200px) {
+  .nav_sm {
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #C5C5C5 0%, #D8D7D7 15.99%, #E2E3E4 31.02%, #939091 48.19%, #7B7778 61.89%, #585455 73.03%, #3A3637 84.46%, #231F20 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: all 500ms linear;
+  }
+
+  .nav_show {
+    left: 0;
+  }
+
+  .overflow_hidden {
+    overflow: hidden;
+  }
+
+  .close_nav {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  }
+
+}
+
+@media (max-width:992px) {
+  .team_star_abs {
+    position: relative;
+  }
+}
+
+@media (max-width:768px) {
+  .have_you_abs {
+    position: absolute;
+    bottom: -4%;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+
+  :root {
+    /* FONT-SIZE */
+    --fs-lg: 30px;
+    --fs-xl: 35px;
+    --fs-2xl: 40px;
+    --fs-3xl: 60px;
+  }
+}
+
+@media (max-width:576px) {
+  .have_you_abs {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: translatex(0);
+  }
+
+  :root {
+    /* FONT-SIZE */
+    --fs-lg: 26px;
+    --fs-xl: 30px;
+    --fs-2xl: 32px;
+    --fs-3xl: 35px;
+  }
+
+  .w-sm-100 {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==============End================= */
